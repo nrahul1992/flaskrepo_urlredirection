@@ -1,5 +1,7 @@
 # flaskrepo_v2
 
+The readMe is under progress...The complete development is yet to be completed or atlaeast has to be brought to a sensible state. 
+
 This is a Flask Sample repository. 
 
 Use this for your learning purpose. 
