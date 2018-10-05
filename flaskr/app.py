@@ -1,5 +1,4 @@
-from flask import Flask
-
+from flask import Flask, flash, redirect, render_template, request, session, abort
 app = Flask(__name__)
 
 
@@ -22,6 +21,12 @@ def members():
 def getMember(name):
     return name
 
+
+@app.route("/*/params", methods=['GET'])
+def dosomething():
+    abc = request.args.get('name', None)
+    defe = request.args.get('place', None)
+    return render_template('test.html', title="templates", **locals())
 
 if __name__ == "__main__":
     app.run()
