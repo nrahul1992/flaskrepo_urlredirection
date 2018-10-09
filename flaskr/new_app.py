@@ -1,4 +1,5 @@
 import HandleName
+import FileHandler
 
 from flask import Flask, render_template, request, jsonify
 from pymongo import MongoClient
@@ -59,6 +60,8 @@ def formaction():
 
 @app.route("/redirect/type1")
 def handleType1():
+    xyz = FileHandler.testMethod()
+    print(xyz)
     return render_template("type1.html", title='templates')
 
 
