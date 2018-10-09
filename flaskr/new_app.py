@@ -1,16 +1,12 @@
 import HandleName
 
 from flask import Flask, render_template, request, jsonify
-from flask_pymongo import PyMongo
 from pymongo import MongoClient
 
 app = Flask(__name__)
 app.debug = True
-
 client = MongoClient('localhost', 27017)
 db = client.APP_USERS
-
-
 op = None
 
 
@@ -53,19 +49,9 @@ def hello(name):
 
 @app.route("/redirect/userhome", methods=['GET', 'POST'])
 def formaction():
+    authToken = HandleName.userAuthentication(db, request.form.get('username'), request.form.get('password'))
     username = request.form.get('username')
-    password = request.form.get('password')
-    try:
-        userdetail = db.userlogindata.find_one({"username": username})
-        print("value for user details ---- ", userdetail)
-        print(userdetail['username'] + "----" + userdetail['password'])
-    except Exception as e:
-        userdetail = None
-
-    if (userdetail is not None and
-            username == userdetail['username'] and
-            password == userdetail['password']):
-        print("username is ", username)
+    if authToken == 'pass':
         return render_template('homepage.html', title="templates", **locals())
     else:
         errormessage = "Invalid username and password"

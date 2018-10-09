@@ -18,8 +18,25 @@ def hellothere( name):
     #   return render_template('test.html', **locals())
     return vals
 
-def handleFile():
-    pass
+
+def userAuthentication(db, username, password):
+
+    try:
+        userdetail = db.userlogindata.find_one({"username": username})
+        print("value for user details ---- ", userdetail)
+        print(userdetail['username'] + "----" + userdetail['password'])
+    except Exception as e:
+        userdetail = None
+        print("Authentication failed ---- ", e)
+
+    if (userdetail is not None and
+            username == userdetail['username'] and
+            password == userdetail['password']):
+        userAuthToken = "pass"
+    else:
+        userAuthToken = "fail"
+
+    return userAuthToken
 
 
 
