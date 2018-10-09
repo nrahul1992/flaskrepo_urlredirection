@@ -19,8 +19,9 @@ def hellothere( name):
     return vals
 
 
-def userAuthentication(db, username, password):
-
+def userAuthentication(db, request):
+    username = request.form.get('username')
+    password = request.form.get('password')
     try:
         userdetail = db.userlogindata.find_one({"username": username})
         print("value for user details ---- ", userdetail)

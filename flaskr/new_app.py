@@ -28,7 +28,6 @@ def setupconnection():
 @app.route("/redirect/login")
 def index():
     return render_template("login.html", title='templates')
-    # return op['username'] + "----" + op['password']
 
 
 @app.route("/*/params", methods=['GET'])
@@ -49,13 +48,28 @@ def hello(name):
 
 @app.route("/redirect/userhome", methods=['GET', 'POST'])
 def formaction():
-    authToken = HandleName.userAuthentication(db, request.form.get('username'), request.form.get('password'))
+    authToken = HandleName.userAuthentication(db, request)
     username = request.form.get('username')
     if authToken == 'pass':
         return render_template('homepage.html', title="templates", **locals())
     else:
         errormessage = "Invalid username and password"
         return render_template('login.html', title="templates", **locals())
+
+
+@app.route("/redirect/type1")
+def handleType1():
+    return render_template("type1.html", title='templates')
+
+
+@app.route("/redirect/type2")
+def handleType2():
+    return render_template("type2.html", title='templates')
+
+
+@app.route("/redirect/type3")
+def handleType3():
+    return render_template("type3.html", title='templates')
 
 
 if __name__ == "__main__":
