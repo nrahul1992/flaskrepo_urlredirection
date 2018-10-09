@@ -18,7 +18,9 @@ def hellothere( name):
     #   return render_template('test.html', **locals())
     return vals
 
+def handleFile():
+    pass
 
-#   obj = Test1().hello()
+
 
 
