@@ -5,8 +5,37 @@
     <title>Title</title>
 </head>
 <body>
+<h2>Type-1 : One Source One Destination</h2> </br>
 
-this is type 1
+<form action="/redirect/type1/handler" method="post">
+        <p>
+            <label for="ticket_number">Ticket Number</label>
+            <input type="text" name="ticket_number">
+        </p>
+        <p>
+            <label for="source_file_path">Source File Path</label>
+            <input type="text" name="source_file_path">
+        </p>
+        <p>
+            <label for="source_url">Source URL</label>
+            <input type="text" name="source_url">
+        </p>
+        <p>
+            <label for="destination_url">Destination URL</label>
+            <input type="text" name="destination_url">
+        </p>
+        <p>
+            <label for="rule_preview">Rule Preview</label>
+            <input type="text" name="rule_preview">
+        </p>
+        <p>
+            <label for="comments">Comments</label>
+            <input type="text" name="comments">
+        </p>
+        <p>
+            <input type="submit">
+        </p>
+    </form>
 
 </body>
 </html>

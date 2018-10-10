@@ -59,10 +59,18 @@ def formaction():
 
 
 @app.route("/redirect/type1")
-def handleType1():
-    xyz = FileHandler.testMethod()
-    print(xyz)
+def renderType1():
     return render_template("type1.html", title='templates')
+
+
+@app.route("/redirect/type1/handler",  methods=['GET', 'POST'])
+def handleType1():
+    print("called type1-one source one destination handler")
+    entry_number = FileHandler.type1Handler(request)
+    print("entry_number ---- ", entry_number)
+    if entry_number is not None:
+        message = "success"
+    return render_template("homepage.html", title='templates', **locals())
 
 
 @app.route("/redirect/type2")
