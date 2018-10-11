@@ -26,7 +26,7 @@ def getMember(name):
 def dosomething():
     abc = request.args.get('name', None)
     defe = request.args.get('place', None)
-    return render_template('test.html', title="templates", **locals())
+    return render_template('test.html', title="functional", **locals())
 
 if __name__ == "__main__":
     app.run()

@@ -26,9 +26,18 @@ def setupconnection():
 
 @app.route("/")
 @app.route("/redirect")
+def home():
+    return render_template("home.html", title='templates\\userpages')
+
+
 @app.route("/redirect/login")
-def index():
-    return render_template("login.html", title='templates')
+def login():
+    return render_template("login.html", title='userpages')
+
+
+@app.route("/redirect/signup")
+def signup():
+    return render_template("signup.html", title='userpages')
 
 
 @app.route("/*/params", methods=['GET'])
@@ -52,15 +61,15 @@ def formaction():
     authToken = HandleName.userAuthentication(db, request)
     username = request.form.get('username')
     if authToken == 'pass':
-        return render_template('homepage.html', title="templates", **locals())
+        return render_template('homepage.html', title="functional", **locals())
     else:
         errormessage = "Invalid username and password"
-        return render_template('login.html', title="templates", **locals())
+        return render_template('login.html', title="functional", **locals())
 
 
 @app.route("/redirect/type1")
 def renderType1():
-    return render_template("type1.html", title='templates')
+    return render_template("type1.html", title='functional')
 
 
 @app.route("/redirect/type1/handler",  methods=['GET', 'POST'])
@@ -72,17 +81,17 @@ def handleType1():
         message = "success"
     else:
         message = "Something is wrong! "
-    return render_template("homepage.html", title='templates', **locals())
+    return render_template("homepage.html", title='functional', **locals())
 
 
 @app.route("/redirect/type2")
 def handleType2():
-    return render_template("type2.html", title='templates')
+    return render_template("type2.html", title='functional')
 
 
 @app.route("/redirect/type3")
 def handleType3():
-    return render_template("type3.html", title='templates')
+    return render_template("type3.html", title='functional')
 
 
 if __name__ == "__main__":
