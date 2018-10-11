@@ -70,6 +70,8 @@ def handleType1():
     print("entry_number ---- ", entry_number)
     if entry_number is not None:
         message = "success"
+    else:
+        message = "Something is wrong! "
     return render_template("homepage.html", title='templates', **locals())
 
 

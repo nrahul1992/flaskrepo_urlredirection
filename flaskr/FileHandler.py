@@ -1,4 +1,5 @@
 from random import randint
+from urllib import parse
 
 __search_text__ = "######### Automated Entries Starts Here ##########"
 
@@ -22,10 +23,13 @@ def type1Handler(request):
             searchStringIndex = contents.index(__search_text__) + __search_text__.__len__()
             first_part = contents[:searchStringIndex]
             second_part = contents[searchStringIndex+1:]
-            rule = "####" + ticket_number + " starts here #### \n"+source_url + "test rule" + destination_url + " \n ####" + \
-                   ticket_number + " ends here #### \n" + comments + rule_preview # formatType1Rule(source_url, destination_url)
+            redirect_rule = rulebuilder(source_url, destination_url)
+            rule = "\n \n ####" + ticket_number + " starts here #### \n" + \
+                    redirect_rule + \
+                   " \n ####" + ticket_number + " ends here #### \n \n"
             entry_number = randint(10000, 99999)
             final_content = first_part + rule + second_part
+
             print(final_content + "\n entry number is ----", entry_number)
         else:
             return None
@@ -36,6 +40,25 @@ def type1Handler(request):
 
     except FileNotFoundError as e:
         print("Exception occurred: " + e)
+
+
+def rulebuilder(source, destination):
+
+    country_codes = ["eut", "uk", "eu", "no", "sk", "se", "pl", "it", "ie", "fi", "cz",
+                     "mt", "gr", "is", "at", "nl", "be", "lu", "hu", "fr", "es", "dk"]
+    source_relative_path = parse.urlparse(source).path
+    destination_relative_path = parse.urlparse(destination).path
+    country_code = parse.urlparse(source).path.split("/")[1]
+    if parse.urlparse(source).netloc == parse.urlparse(destination).netloc and \
+            parse.urlparse(source).path.split("/")[1] == parse.urlparse(destination).path.split("/")[1]:
+        while country_code in country_codes:
+            redirect_rule = '<If $uri =~ \"^/' + country_code + '\" and $uri =~ \"(.*)' + source_relative_path +'(.*)\">' \
+                            + '\n NameTrans fn=\"redirect\"  url=\"$1' + destination_relative_path + '\" status=\"301\"' \
+                            + '</If>'
+
+            return redirect_rule
+    else:
+        return None
 
 
 def testMethod2():
@@ -66,3 +89,5 @@ def testMethod2():
         fi.write(final_content)
     fi.close()
     return yup
+
+
