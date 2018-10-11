@@ -1,4 +1,4 @@
-import HandleName
+import HandleUser
 import FileHandler
 
 from flask import Flask, render_template, request, jsonify
@@ -27,7 +27,7 @@ def setupconnection():
 @app.route("/")
 @app.route("/redirect")
 def home():
-    return render_template("home.html", title='templates\\userpages')
+    return render_template("home.html", title='templates')
 
 
 @app.route("/redirect/login")
@@ -56,9 +56,25 @@ def hello(name):
     return render_template('test.html', **locals())
 
 
+@app.route("/redirect/userregister", methods=['GET', 'POST'])
+def userRegister():
+    status = HandleUser.userRegistration(db, request)
+    print("status is ----", status)
+    if status is not None and str(status).lower() == "new":
+        errormessage = "User registered"
+        return render_template('login.html', title="templates", **locals())
+    elif status is not None and str(status).lower() == "existing":
+        errormessage = "User already present in DB"
+        return render_template('signup.html', title="templates", **locals())
+    else:
+        errormessage = "Something went wrong. Status ---- " + status
+        return render_template('login.html', title="templates", **locals())
+
+
+
 @app.route("/redirect/userhome", methods=['GET', 'POST'])
-def formaction():
-    authToken = HandleName.userAuthentication(db, request)
+def userhome():
+    authToken = HandleUser.userAuthentication(db, request)
     username = request.form.get('username')
     if authToken == 'pass':
         return render_template('homepage.html', title="functional", **locals())

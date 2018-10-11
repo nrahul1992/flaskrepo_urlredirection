@@ -39,6 +39,17 @@ def userAuthentication(db, request):
 
     return userAuthToken
 
-
-
-
+def userRegistration(db, request):
+    username = request.form.get('username')
+    password = request.form.get('password')
+    confirmPassword = request.form.get('confirm_password')
+    userdetail = db.userlogindata.find_one({"username": username})
+    if userdetail is not None:
+        status = "Existing"
+    else:
+        if password != confirmPassword:
+            status = "Error"
+        else:
+            db.userlogindata.insert_one({"username": username, "password": password})
+            status = "New"
+    return status
