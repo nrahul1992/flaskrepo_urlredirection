@@ -11,7 +11,7 @@ Follow the steps to run this application:
 2. Install Python. 
 3. Download and install Pip tools
 4. Install the libraries/APIs in the requirements.txt
-5. run the new_app.py to start the server
+5. run the new_app.py to start the server. 
 
 DB Requirements- 
 1. Download and install MongoDB for local/server. 

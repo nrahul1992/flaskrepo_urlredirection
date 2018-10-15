@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- <script src="/static/js/test.js" charset="utf-8"></script>
+<link rel="stylesheet" href="/static/css/test.css"> -->
 <head>
     <meta charset="UTF-8">
     <title>login page</title>
 </head>
 <br>
-This is the login page. </br>
+<h1>This is the login page. </h1></br>
 {{errormessage}} </br>
 
-<form action="/redirect/userhome" method="post">
+<form name="login"  action="/redirect/userhome" onsubmit="return validateForm()" method="post">
         <p>
             <label for="username">Username</label>
             <input type="text" name="username">
