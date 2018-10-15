@@ -1,5 +1,5 @@
 from random import randint
-
+import SessionManager
 
 def hellothere( name):
     quotes = ["'If people do not believe that mathematics is simple, it is only because "
@@ -33,7 +33,7 @@ def userAuthentication(db, request):
     if (userdetail is not None and
             username == userdetail['username'] and
             password == userdetail['password']):
-        userAuthToken = "pass"
+        userAuthToken = SessionManager.createSession(db, str(userdetail['_id']), username)
     else:
         userAuthToken = "fail"
 
@@ -53,3 +53,4 @@ def userRegistration(db, request):
             db.userlogindata.insert_one({"username": username, "password": password})
             status = "New"
     return status
+

@@ -18,3 +18,8 @@ DB Requirements-
 2. user db and collections creation will be done from within the application. 
 3. make sure your mongo instance is up and running for the working of the application. 
 
+DB Name : APP_USERS
+Collection Used:    userlogindata
+                    usersessiondata 
+                
+

@@ -8,8 +8,12 @@
 </head>
 <br>
 <h1>This is the login page. </h1></br>
-{{errormessage}} </br>
 
+ <a href="/redirect">Go to home! </a></br>
+ <a href="/redirect/signup">Sign up! </a></br>
+</br>
+
+{{errormessage}} </br>
 <form name="login"  action="/redirect/userhome" onsubmit="return validateForm()" method="post">
         <p>
             <label for="username">Username</label>
