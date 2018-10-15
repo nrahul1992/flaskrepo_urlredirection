@@ -1,3 +1,4 @@
 flask
 flask_pymongo
 pymongo
+flask_session
