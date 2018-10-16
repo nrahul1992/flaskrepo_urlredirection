@@ -31,3 +31,12 @@ def checkValidSession(db, session):
         return "valid"
     else:
         return "invalid"
+
+
+def deleteSession(db, username, userToken):
+    try:
+        db.usersessiondata.delete_one({"_id": ObjectId(userToken), 'username': username})
+    except Exception as e:
+        print("Exception occurred while deleting user session from usersessiondata collection. ----", e)
+
+

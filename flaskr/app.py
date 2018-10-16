@@ -28,5 +28,6 @@ def dosomething():
     defe = request.args.get('place', None)
     return render_template('test.html', title="functional", **locals())
 
+
 if __name__ == "__main__":
     app.run()
