@@ -1,7 +1,7 @@
 import HandleUser
 import FileHandler, SessionManager
 
-from flask import Flask, render_template, request, session
+from flask import Flask, render_template, request, session, redirect, url_for
 from pymongo import MongoClient
 
 app = Flask(__name__)
@@ -28,12 +28,12 @@ def setupconnection():
 @app.route("/")
 @app.route("/redirect")
 def home():
-    return render_template("home.html", title='templates')
+    return render_template("home.html", title='templates', **locals())
 
 
 @app.route("/redirect/login")
 def login():
-    return render_template("login.html", title='userpages')
+    return render_template("login.html", title='templates')
 
 
 @app.route("/redirect/signup")
@@ -41,11 +41,19 @@ def signup():
     return render_template("signup.html", title='userpages')
 
 
-@app.route("/*/params", methods=['GET'])
-def dosomething():
-    abc = request.args.get('name', None)
-    defe = request.args.get('place', None)
-    return render_template('test.html', **locals())
+@app.route("/redirect/logout")
+def logout():
+    if session['userToken'] is not None:
+        userToken = str(session['userToken']).split("--")[1]
+        username = str(session['userToken']).split("--")[0]
+        if userToken is not None and \
+            username is not None:
+            SessionManager.deleteSession(db, username, userToken)
+            errormessage = "Successfully logged out. "
+    session.clear()
+    return redirect(url_for('.home'))
+    #return redirect("/redirect")
+    #return render_template("home.html", title='templates', **locals())
 
 
 @app.route("/hello/<string:name>/")
