@@ -26,9 +26,15 @@ def setupconnection():
 
 
 @app.route("/")
-@app.route("/redirect")
+@app.route("/chatapp")
 def home():
-    return render_template("home.html", title='templates', **locals())
+    return render_template("chathome.html", title='templates', **locals())
+
+@app.route("/chatapp/get")
+def get_bot_response():
+    userText = request.args.get('msg')
+    #return str(english_bot.get_response(userText))
+    return "hello " + userText + "!"
 
 
 @app.route("/redirect/login")
@@ -52,8 +58,7 @@ def logout():
             errormessage = "Successfully logged out. "
     session.clear()
     return redirect(url_for('.home'))
-    #return redirect("/redirect")
-    #return render_template("home.html", title='templates', **locals())
+
 
 
 @app.route("/hello/<string:name>/")
@@ -109,7 +114,6 @@ def renderType1():
         return render_template('login.html', title="functional", **locals())
 
 
-
 @app.route("/redirect/type1/handler",  methods=['GET', 'POST'])
 def handleType1():
     print("called type1-one source one destination handler")
@@ -120,16 +124,6 @@ def handleType1():
     else:
         message = "Something is wrong! "
     return render_template("homepage.html", title='functional', **locals())
-
-
-@app.route("/redirect/type2")
-def handleType2():
-    return render_template("type2.html", title='functional')
-
-
-@app.route("/redirect/type3")
-def handleType3():
-    return render_template("type3.html", title='functional')
 
 
 if __name__ == "__main__":
