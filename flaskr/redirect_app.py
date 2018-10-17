@@ -30,6 +30,13 @@ def chatappHome():
     return render_template("chathome.html", title='templates')
 
 
+@app.route("/chatapp/get")
+def get_bot_response():
+    userText = request.args.get('msg')
+    #return str(english_bot.get_response(userText))
+    return "hello " + userText + "!"
+
+
 @app.route("/")
 @app.route("/redirect")
 def home():

@@ -30,6 +30,12 @@ def setupconnection():
 def home():
     return render_template("chathome.html", title='templates', **locals())
 
+@app.route("/chatapp/get")
+def get_bot_response():
+    userText = request.args.get('msg')
+    #return str(english_bot.get_response(userText))
+    return "hello " + userText + "!"
+
 
 @app.route("/redirect/login")
 def login():

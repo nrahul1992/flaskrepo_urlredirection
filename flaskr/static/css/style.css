@@ -32,11 +32,11 @@ h3 {
 }
 
 #textInput {
-    width: 87%;
+    width: 75%;
     border: none;
     border-bottom: 3px solid #009688;
     font-family: monospace;
-    font-size: 17px;
+    font-size: 22px;
 }
 
 #buttonInput {
@@ -78,4 +78,51 @@ h3 {
     bottom:0;
     right:0;
     width: 300px;
+}
+
+.sendButton {
+    float: right;
+    clear: both;
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #009688;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 28px;
+    padding: 20px;
+    width: 80px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 4px;
+}
+
+.sendButton.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.sendButton span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.sendButton span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.sendButton:hover span {
+  padding-right: 25px;
+}
+
+.sendButton:hover span:after {
+  opacity: 1;
+  right: 0;
 }
