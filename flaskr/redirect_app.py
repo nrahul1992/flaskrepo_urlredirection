@@ -25,6 +25,11 @@ def setupconnection():
     return data
 
 
+@app.route("/chatapp")
+def chatappHome():
+    return render_template("chathome.html", title='templates')
+
+
 @app.route("/")
 @app.route("/redirect")
 def home():
@@ -34,7 +39,6 @@ def home():
 @app.route("/redirect/login")
 def login():
     return render_template("login.html", title='templates')
-
 
 
 @app.route("/redirect/signup")
@@ -53,8 +57,7 @@ def logout():
             errormessage = "Successfully logged out. "
     session.clear()
     return redirect(url_for('.home'))
-    #return redirect("/redirect")
-    #return render_template("home.html", title='templates', **locals())
+
 
 
 @app.route("/hello/<string:name>/")
@@ -108,7 +111,6 @@ def renderType1():
     else:
         errormessage = "Invalid session encountered, please login again."
         return render_template('login.html', title="functional", **locals())
-
 
 
 @app.route("/redirect/type1/handler",  methods=['GET', 'POST'])
