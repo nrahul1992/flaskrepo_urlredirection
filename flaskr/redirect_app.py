@@ -1,5 +1,8 @@
 import HandleUser
-import FileHandler, SessionManager
+import FileHandler
+import SessionManager
+import ChatHandler
+import nltk
 
 from flask import Flask, render_template, request, session, redirect, url_for
 from pymongo import MongoClient
@@ -9,11 +12,13 @@ app.debug = True
 app.secret_key = "topsecretnonsharablekey"
 client = MongoClient('localhost', 27017)
 db = client.APP_USERS
+db2 = client.BOT_TRAINING_DATA
 op = None
-
+nltk.download()
 
 @app.before_first_request
 def setupconnection():
+    nltk.download()
     users = db.userlogindata.find()
     data = 'Name of Users:'
     creds = {}
@@ -33,8 +38,8 @@ def chatappHome():
 @app.route("/chatapp/get")
 def get_bot_response():
     userText = request.args.get('msg')
-    #return str(english_bot.get_response(userText))
-    return "hello " + userText + "!"
+    ChatHandler.parseText(userText)
+    return ChatHandler.sayHi()
 
 
 @app.route("/")

@@ -8,6 +8,7 @@
           <option value="FileHandler" />
           <option value="HandleUser" />
           <option value="SessionManager" />
+          <option value="ChatHandler" />
         </list>
       </option>
     </inspection_tool>

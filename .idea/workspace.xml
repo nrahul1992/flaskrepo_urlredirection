@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b2aba14a-6ea3-433d-a6e1-79de4d6b1360" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/flaskr/chat_app.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flaskr/static/css/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/flaskr/templates/chathome.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/flaskr/ChatHandler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flaskr/new_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/flaskr/redirect_app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flaskr/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/flaskr/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flaskr/redirect_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/flaskr/redirect_app.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -65,93 +63,82 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="css" value="2" />
-          <entry key="html" value="37" />
-          <entry key="js" value="1" />
+          <entry key="html" value="38" />
+          <entry key="js" value="2" />
           <entry key="md" value="3" />
-          <entry key="py" value="15" />
+          <entry key="py" value="19" />
           <entry key="txt" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="2" />
-          <entry key="HTML" value="37" />
-          <entry key="JavaScript" value="1" />
+          <entry key="HTML" value="38" />
+          <entry key="JavaScript" value="2" />
           <entry key="Markdown" value="3" />
           <entry key="PLAIN_TEXT" value="2" />
-          <entry key="Python" value="15" />
+          <entry key="Python" value="19" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="css" value="2" />
+          <entry key="css" value="84" />
           <entry key="dummy" value="21" />
-          <entry key="html" value="1116" />
+          <entry key="html" value="1377" />
           <entry key="js" value="13" />
           <entry key="md" value="521" />
-          <entry key="py" value="6661" />
-          <entry key="txt" value="304" />
+          <entry key="py" value="7206" />
+          <entry key="txt" value="387" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="2" />
-          <entry key="HTML" value="1116" />
+          <entry key="CSS" value="84" />
+          <entry key="HTML" value="1377" />
           <entry key="JavaScript" value="13" />
           <entry key="Markdown" value="521" />
-          <entry key="PLAIN_TEXT" value="325" />
-          <entry key="Python" value="6661" />
+          <entry key="PLAIN_TEXT" value="408" />
+          <entry key="Python" value="7206" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/flaskr/SessionManager.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="235">
-              <caret line="34" selection-start-line="34" selection-end-line="34" />
-              <folding>
-                <marker date="1539675491916" expanded="true" signature="600:601" ph="..." />
-                <marker date="1539675491916" expanded="true" signature="1515:1516" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/flaskr/redirect_app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="101">
-              <caret line="27" column="12" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="12" />
+            <state relative-caret-position="87">
+              <caret line="20" column="19" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
               <folding>
                 <element signature="e#0#17#0" expanded="true" />
-                <element signature="e#297#555#0" />
                 <element signature="e#825#881#0" />
-                <element signature="e#1047#1353#0" />
-                <element signature="e#1139#1412#0" />
                 <element signature="e#1501#2114#0" />
                 <element signature="e#2244#2592#0" />
                 <element signature="e#3014#3294#0" />
                 <element signature="e#2746#3089#0" />
                 <element signature="e#3145#3201#0" />
-                <marker date="1539756041880" expanded="true" signature="677:743" ph="..." />
-                <marker date="1539756041880" expanded="true" signature="794:868" ph="..." />
-                <marker date="1539756041880" expanded="false" signature="910:915" ph="..." />
-                <marker date="1539756041880" expanded="false" signature="1481:1543" ph="..." />
-                <marker date="1539756041880" expanded="false" signature="2577:2578" ph="..." />
-                <marker date="1539756041880" expanded="false" signature="3903:4254" ph="..." />
+                <marker date="1539779197010" expanded="true" signature="780:1005" ph="..." />
+                <marker date="1539779197010" expanded="true" signature="1056:1130" ph="..." />
+                <marker date="1539779197010" expanded="false" signature="1172:1177" ph="..." />
+                <marker date="1539779197010" expanded="true" signature="1743:1805" ph="..." />
+                <marker date="1539779197010" expanded="false" signature="2839:2840" ph="..." />
+                <marker date="1539779197010" expanded="false" signature="4165:4516" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/flaskr/chat_app.py">
+        <entry file="file://$PROJECT_DIR$/flaskr/ChatHandler.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="30" column="32" selection-start-line="30" selection-start-column="32" selection-end-line="30" selection-end-column="32" />
+            <state relative-caret-position="-34">
+              <caret line="13" column="43" selection-start-line="13" selection-start-column="37" selection-end-line="13" selection-end-column="43" />
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
+                <marker date="1539778955489" expanded="true" signature="197:594" ph="..." />
+                <marker date="1539778955489" expanded="true" signature="606:611" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -159,40 +146,62 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/flaskr/templates/chathome.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="61" selection-start-line="3" selection-start-column="61" selection-end-line="3" selection-end-column="61" />
+            <state relative-caret-position="119">
+              <caret line="49" column="17" selection-start-line="49" selection-start-column="17" selection-end-line="49" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/flaskr/HandleUser.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" column="44" lean-forward="true" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="44" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+                <marker date="1539598192714" expanded="true" signature="49:50" ph="..." />
+                <marker date="1539598192714" expanded="true" signature="2348:2353" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/flaskr/helloworld.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="69" column="10" selection-start-line="61" selection-start-column="8" selection-end-line="69" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/flaskr/FileHandler.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-887">
+              <caret line="28" column="70" selection-start-line="28" selection-start-column="70" selection-end-line="28" selection-end-column="70" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+                <marker date="1539233591605" expanded="true" signature="207:212" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/flaskr/static/css/style.css">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="99" column="11" selection-start-line="99" selection-start-column="11" selection-end-line="99" selection-end-column="11" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/flaskr/templates/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="235">
-              <caret line="21" column="9" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/flaskr/templates/test.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-column="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/flaskr/templates/type1.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="44" selection-start-line="10" selection-start-column="44" selection-end-line="10" selection-end-column="44" />
+            <state relative-caret-position="85">
+              <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -200,7 +209,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/flaskr/templates/login.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="187">
               <caret line="12" selection-start-line="12" selection-end-line="12" selection-end-column="46" />
             </state>
           </provider>
@@ -230,6 +239,7 @@
       <find>class</find>
       <find>randint</find>
       <find>global</find>
+      <find>/cha</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -275,9 +285,11 @@
         <option value="$PROJECT_DIR$/flaskr/templates/layout.html" />
         <option value="$PROJECT_DIR$/flaskr/templates/type1.html" />
         <option value="$PROJECT_DIR$/flaskr/new_app.py" />
-        <option value="$PROJECT_DIR$/flaskr/chat_app.py" />
-        <option value="$PROJECT_DIR$/flaskr/templates/chathome.html" />
         <option value="$PROJECT_DIR$/flaskr/templates/home.html" />
+        <option value="$PROJECT_DIR$/flaskr/chat_app.py" />
+        <option value="$PROJECT_DIR$/flaskr/static/css/style.css" />
+        <option value="$PROJECT_DIR$/flaskr/templates/chathome.html" />
+        <option value="$PROJECT_DIR$/flaskr/ChatHandler.py" />
         <option value="$PROJECT_DIR$/flaskr/redirect_app.py" />
       </list>
     </option>
@@ -307,25 +319,6 @@
               <item name="f" type="b2602c69:ProjectViewProjectNode" />
               <item name="f" type="462c0819:PsiDirectoryNode" />
               <item name="flaskr" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="f" type="b2602c69:ProjectViewProjectNode" />
-              <item name="f" type="462c0819:PsiDirectoryNode" />
-              <item name="flaskr" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="f" type="b2602c69:ProjectViewProjectNode" />
-              <item name="f" type="462c0819:PsiDirectoryNode" />
-              <item name="flaskr" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="f" type="b2602c69:ProjectViewProjectNode" />
-              <item name="f" type="462c0819:PsiDirectoryNode" />
-              <item name="flaskr" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -545,7 +538,21 @@
       <option name="project" value="LOCAL" />
       <updated>1539683970075</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="chatbot interface added | New files added">
+      <created>1539756218514</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1539756218515</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Static chat bot functionality added.">
+      <created>1539763314284</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1539763314284</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TodoView">
@@ -596,7 +603,9 @@
     <MESSAGE value="Added static files and rendering" />
     <MESSAGE value="Session management added for type1 - v1" />
     <MESSAGE value="Session management added for type1 - v3 along with logout functionality." />
-    <option name="LAST_COMMIT_MESSAGE" value="Session management added for type1 - v3 along with logout functionality." />
+    <MESSAGE value="chatbot interface added | New files added" />
+    <MESSAGE value="Static chat bot functionality added." />
+    <option name="LAST_COMMIT_MESSAGE" value="Static chat bot functionality added." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -637,13 +646,6 @@
     <entry file="file://$PROJECT_DIR$/flaskr/handlers/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/flaskr/FileHandler.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="70" selection-start-line="28" selection-start-column="70" selection-end-line="28" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/flaskr/userpages/homepage.html" />
     <entry file="file://$PROJECT_DIR$/flaskr/handlers/userpages/home.html" />
     <entry file="file://$PROJECT_DIR$/flaskr/handlers/userpages/login.html" />
@@ -668,13 +670,6 @@
     <entry file="file://$PROJECT_DIR$/flaskr/templates/userpages/home1.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/flaskr/static/js/test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="1" lean-forward="true" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/flaskr/static/css/test.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -686,18 +681,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/flaskr/HandleUser.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="35" column="79" selection-start-line="35" selection-start-column="79" selection-end-line="35" selection-end-column="79" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-            <marker date="1539598192714" expanded="true" signature="49:50" ph="..." />
-            <marker date="1539598192714" expanded="true" signature="2348:2353" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -722,13 +705,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
           <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/flaskr/templates/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="12" selection-start-line="12" selection-end-line="12" selection-end-column="46" />
         </state>
       </provider>
     </entry>
@@ -778,58 +754,108 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/flaskr/helloworld.py">
+    <entry file="file://$PROJECT_DIR$/flaskr/templates/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-507">
-          <caret line="69" column="10" lean-forward="true" selection-start-line="61" selection-start-column="8" selection-end-line="69" selection-end-column="10" />
+        <state relative-caret-position="85">
+          <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flaskr/static/js/test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flaskr/templates/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="12" selection-start-line="12" selection-end-line="12" selection-end-column="46" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/flaskr/static/css/style.css">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="99" column="11" selection-start-line="99" selection-start-column="11" selection-end-line="99" selection-end-column="11" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/flaskr/chat_app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="30" column="32" selection-start-line="30" selection-start-column="32" selection-end-line="30" selection-end-column="32" />
+        <state relative-caret-position="238">
+          <caret line="36" column="36" lean-forward="true" selection-start-line="36" selection-start-column="11" selection-end-line="36" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flaskr/helloworld.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="69" column="10" selection-start-line="61" selection-start-column="8" selection-end-line="69" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flaskr/FileHandler.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-887">
+          <caret line="28" column="70" selection-start-line="28" selection-start-column="70" selection-end-line="28" selection-end-column="70" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+            <marker date="1539233591605" expanded="true" signature="207:212" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/flaskr/templates/chathome.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="61" selection-start-line="3" selection-start-column="61" selection-end-line="3" selection-end-column="61" />
+        <state relative-caret-position="119">
+          <caret line="49" column="17" selection-start-line="49" selection-start-column="17" selection-end-line="49" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/flaskr/templates/home.html">
+    <entry file="file://$PROJECT_DIR$/flaskr/HandleUser.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="21" column="9" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
+        <state relative-caret-position="187">
+          <caret line="11" column="44" lean-forward="true" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="44" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+            <marker date="1539598192714" expanded="true" signature="49:50" ph="..." />
+            <marker date="1539598192714" expanded="true" signature="2348:2353" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flaskr/ChatHandler.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-34">
+          <caret line="13" column="43" selection-start-line="13" selection-start-column="37" selection-end-line="13" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+            <marker date="1539778955489" expanded="true" signature="197:594" ph="..." />
+            <marker date="1539778955489" expanded="true" signature="606:611" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/flaskr/redirect_app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="101">
-          <caret line="27" column="12" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="12" />
+        <state relative-caret-position="87">
+          <caret line="20" column="19" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
           <folding>
             <element signature="e#0#17#0" expanded="true" />
-            <element signature="e#297#555#0" />
             <element signature="e#825#881#0" />
-            <element signature="e#1047#1353#0" />
-            <element signature="e#1139#1412#0" />
             <element signature="e#1501#2114#0" />
             <element signature="e#2244#2592#0" />
             <element signature="e#3014#3294#0" />
             <element signature="e#2746#3089#0" />
             <element signature="e#3145#3201#0" />
-            <marker date="1539756041880" expanded="true" signature="677:743" ph="..." />
-            <marker date="1539756041880" expanded="true" signature="794:868" ph="..." />
-            <marker date="1539756041880" expanded="false" signature="910:915" ph="..." />
-            <marker date="1539756041880" expanded="false" signature="1481:1543" ph="..." />
-            <marker date="1539756041880" expanded="false" signature="2577:2578" ph="..." />
-            <marker date="1539756041880" expanded="false" signature="3903:4254" ph="..." />
+            <marker date="1539779197010" expanded="true" signature="780:1005" ph="..." />
+            <marker date="1539779197010" expanded="true" signature="1056:1130" ph="..." />
+            <marker date="1539779197010" expanded="false" signature="1172:1177" ph="..." />
+            <marker date="1539779197010" expanded="true" signature="1743:1805" ph="..." />
+            <marker date="1539779197010" expanded="false" signature="2839:2840" ph="..." />
+            <marker date="1539779197010" expanded="false" signature="4165:4516" ph="..." />
           </folding>
         </state>
       </provider>
