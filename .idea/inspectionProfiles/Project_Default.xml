@@ -9,6 +9,7 @@
           <option value="HandleUser" />
           <option value="SessionManager" />
           <option value="ChatHandler" />
+          <option value="ChatTrainer" />
         </list>
       </option>
     </inspection_tool>

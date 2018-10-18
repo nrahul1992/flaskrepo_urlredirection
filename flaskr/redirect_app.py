@@ -2,6 +2,7 @@ import HandleUser
 import FileHandler
 import SessionManager
 import ChatHandler
+import ChatTrainer
 import nltk
 
 from flask import Flask, render_template, request, session, redirect, url_for
@@ -12,13 +13,12 @@ app.debug = True
 app.secret_key = "topsecretnonsharablekey"
 client = MongoClient('localhost', 27017)
 db = client.APP_USERS
-db2 = client.BOT_TRAINING_DATA
+db2 = client.CHATAPP
 op = None
-nltk.download()
+#nltk.download() # uncomment and run this in the first run
 
 @app.before_first_request
 def setupconnection():
-    nltk.download()
     users = db.userlogindata.find()
     data = 'Name of Users:'
     creds = {}
@@ -33,6 +33,18 @@ def setupconnection():
 @app.route("/chatapp")
 def chatappHome():
     return render_template("chathome.html", title='templates')
+
+
+@app.route("/chatapp/trainingground")
+def chatappTrainingHome():
+    return render_template("chattrain.html", title='templates')
+
+
+@app.route("/chatapp/train")
+def chatappTraining():
+    userText = request.args.get('msg')
+    return ChatTrainer.parseUsertext(userText)
+    #return ChatHandler.sayHi()
 
 
 @app.route("/chatapp/get")

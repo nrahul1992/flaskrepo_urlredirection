@@ -18,6 +18,7 @@ def parseText(usertext):
     for token in tokens:
         if token in sr:
             clean_tokens.remove(token)
+    print("clean tokens are ---- ", clean_tokens)
     freq = nltk.FreqDist(clean_tokens)
     print("frequency is ---- ", freq)
     for key, val in freq.items():
