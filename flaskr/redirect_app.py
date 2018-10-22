@@ -3,6 +3,7 @@ import FileHandler
 import SessionManager
 import ChatHandler
 import ChatTrainer
+# import JiraHandler
 import nltk
 
 from flask import Flask, render_template, request, session, redirect, url_for
@@ -30,6 +31,12 @@ def setupconnection():
     return data
 
 
+'''
+@app.route("/jira/fetch")
+def fetchJiraIssues():
+    return JiraHandler.fetchIssues()
+'''
+
 @app.route("/chatapp")
 def chatappHome():
     return render_template("chathome.html", title='templates')
@@ -43,7 +50,7 @@ def chatappTrainingHome():
 @app.route("/chatapp/train")
 def chatappTraining():
     userText = request.args.get('msg')
-    return ChatTrainer.parseUsertext(userText)
+    return ChatTrainer.parseUsertext(userText, db2)
     #return ChatHandler.sayHi()
 
 

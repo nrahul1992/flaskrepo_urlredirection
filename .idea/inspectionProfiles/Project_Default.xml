@@ -10,6 +10,7 @@
           <option value="SessionManager" />
           <option value="ChatHandler" />
           <option value="ChatTrainer" />
+          <option value="JiraHandler" />
         </list>
       </option>
     </inspection_tool>
