@@ -52,7 +52,6 @@ def createBuffer(text, db):
             questionCount = -1
         else:
             questionCount = 0
-        print('question count is ----', questionCount)
     except Exception as e:
         print("Error reading db ----", e)
     if questionCount == 0 and text != '':
@@ -62,7 +61,6 @@ def createBuffer(text, db):
         insertBuffer['answer'] = ''
         try:
             db.bufferdata.insert_one(insertBuffer)
-            print("question added. Answer pending!")
         except Exception as e:
             print("Error occurred during buffer creation ----", e)
         return "Question Noted."
@@ -89,7 +87,7 @@ def updateBuffer(text, db):
             db.bufferdata.delete_one({"qflag": 1})
             print("buffer cleared")
         except Exception as e:
-            print('error occurred while inserting training data')
+            print('error occurred while inserting training data', e)
 
         return 'Answer Noted.'
     else:
@@ -101,22 +99,14 @@ def fetchTag(question):
     userTextTokens = [t for t in question.split()]
     print("user question tokens are ---- ", userTextTokens)
     for token in userTextTokens:
-        print("token is ---- ", token)
         for qtoken in __possibleQuestionList__:
-            print("qtoken is ---- ", qtoken)
             qt = [q for q in qtoken.split()]
-            print("question token qt is ---- ", qt)
             if token in qt:
-                print('match found for question...')
                 qMatch += 1
-                print('qmatch value is ----', qMatch)
         for gtoken in __possibleGreetingList__:
-            print("gtoken is ----", gtoken)
             gt = [g for g in gtoken.split()]
             if token in gt:
-                print('match found for greeting...')
                 gMatch += 1
-                print('gmatch value is ----', gMatch)
     print('final qmatch value is----', qMatch)
     print('final gmatch value is----', gMatch)
     if qMatch > gMatch:

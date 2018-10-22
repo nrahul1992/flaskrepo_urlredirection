@@ -31,12 +31,6 @@ def setupconnection():
     return data
 
 
-'''
-@app.route("/jira/fetch")
-def fetchJiraIssues():
-    return JiraHandler.fetchIssues()
-'''
-
 @app.route("/chatapp")
 def chatappHome():
     return render_template("chathome.html", title='templates')
@@ -57,8 +51,7 @@ def chatappTraining():
 @app.route("/chatapp/get")
 def get_bot_response():
     userText = request.args.get('msg')
-    ChatHandler.parseText(userText)
-    return ChatHandler.sayHi()
+    return str(ChatHandler.parseText(userText))
 
 
 @app.route("/")
