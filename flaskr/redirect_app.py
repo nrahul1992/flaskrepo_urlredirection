@@ -1,5 +1,10 @@
 import HandleUser
-import FileHandler, SessionManager
+import FileHandler
+import SessionManager
+import ChatHandler
+import ChatTrainer
+# import JiraHandler
+import nltk
 
 from flask import Flask, render_template, request, session, redirect, url_for
 from pymongo import MongoClient
@@ -9,8 +14,9 @@ app.debug = True
 app.secret_key = "topsecretnonsharablekey"
 client = MongoClient('localhost', 27017)
 db = client.APP_USERS
+db2 = client.CHATAPP
 op = None
-
+#nltk.download() # uncomment and run this in the first run
 
 @app.before_first_request
 def setupconnection():
@@ -30,11 +36,22 @@ def chatappHome():
     return render_template("chathome.html", title='templates')
 
 
+@app.route("/chatapp/trainingground")
+def chatappTrainingHome():
+    return render_template("chattrain.html", title='templates')
+
+
+@app.route("/chatapp/train")
+def chatappTraining():
+    userText = request.args.get('msg')
+    return ChatTrainer.parseUsertext(userText, db2)
+    #return ChatHandler.sayHi()
+
+
 @app.route("/chatapp/get")
 def get_bot_response():
     userText = request.args.get('msg')
-    #return str(english_bot.get_response(userText))
-    return "hello " + userText + "!"
+    return str(ChatHandler.parseText(userText))
 
 
 @app.route("/")
