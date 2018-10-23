@@ -4,7 +4,12 @@
 # jql- Modify the Jira project
 import ChatHandler
 
+from pymongo import MongoClient
 from jira.client import JIRA
+
+
+client = MongoClient('localhost', 27017)
+db2 = client.CHATAPP
 
 
 def queryJira2():
@@ -32,7 +37,8 @@ def queryJira2():
             insertQuery['issueId'] = issue.id
             insertQuery['issueSummary'] = issue.fields.summary
             insertQuery['issueSummaryLexeme'] = issueSummaryLexeme
-            print(insertQuery)
+            db2.jiradatasource.insert_one(insertQuery)
+            # print(insertQuery)
 
 queryJira2()
 
