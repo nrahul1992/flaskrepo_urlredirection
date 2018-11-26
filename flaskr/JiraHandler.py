@@ -2,14 +2,37 @@
 # the user query will be processed against.
 # DB used- CHATAPP, Collection used- jiradatasource
 # jql- Modify the Jira project
+from __future__ import print_function
+import pysolr
+
 import ChatHandler
 
 from pymongo import MongoClient
 from jira.client import JIRA
 
 
+
 client = MongoClient('localhost', 27017)
 db2 = client.CHATAPP
+
+
+def solrTest():
+    # Setup a basic Solr instance. The timeout is optional.
+    solr = pysolr.Solr('http://localhost:8983/solr/', timeout=10)
+    print("Connected to solr")
+
+    # How you would index data.
+    solr.add([
+        {
+            "id": "doc_1",
+            "title": "A very small test document about elmo",
+        }
+    ])
+
+    #searching
+    results = solr.search('elmo')
+    print("result is", results)
+    print("Saw {0} result(s).".format(len(results)))
 
 
 def queryJira2():
@@ -42,3 +65,4 @@ def queryJira2():
 
 queryJira2()
 
+#solrTest()
