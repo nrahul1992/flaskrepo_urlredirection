@@ -1,4 +1,5 @@
 # flaskrepo_v2
+# Author/Contributor - Rahul
 
 The readMe is under progress...The complete development is yet to be completed or at least has to be brought to a sensible state. 
 
@@ -51,4 +52,5 @@ you are very well aware of the db scripts used along the application, then you m
            
 Note to the collaborators: Please take the work ahead on solr indexing of the knowledge base so that it can be indexed 
 and searched for user input.                  
+
 
